@@ -1,11 +1,11 @@
-main: main.cc IrigBEncoder.o
+main: main.cc IrigBFrame.o
 
-IrigBEncoder.o: IrigBEncoder.cc IrigBEncoder.h
+IrigBFrame.o: IrigBFrame.cc IrigBFrame.h IrigSymbol.h IrigTime.h
 
 style:
 	clang-format --style="{BasedOnStyle: Google, ColumnLimit: 120}" -i *.cc *.h
 .PHONY: style
 
 clean:
-	-rm -f main
+	-rm -f main *.o
 .PHONY: clean
