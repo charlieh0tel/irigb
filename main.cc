@@ -19,14 +19,7 @@ int main(int argc, char **argv) {
   for (int i = 0; i < frame.size(); ++i) {
     auto value = frame[i];
 
-    switch (i) {
-      case 1:
-      case 10:
-      case 20:
-      case 30:
-      case 50:
-      case 60:
-      case 80:
+    if (i % 10 == 9) {
         cout << endl;
     }
 
@@ -38,7 +31,7 @@ int main(int argc, char **argv) {
         cout << "1 ";
         break;
       case IrigBSymbols::kReferenceMark:
-        cout << "R ";
+        cout << "  R ";
         break;
       case IrigBSymbols::kPositionMark:
         cout << "P ";
