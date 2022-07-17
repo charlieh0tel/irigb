@@ -29,7 +29,7 @@ class IrigBFrame {
   void PushBCD6(int value);
   // 7-bits BCD for seconds and minutes.
   void PushBCD7(int value);
-  // 8-bits BCD for days.
+  // 8-bits BCD for years.
   void PushBCD8(int value);
   // 10-bits BCD for days.
   void PushBCD10(int value);
