@@ -1,4 +1,5 @@
 #include <iostream>
+#include <absl/base/macros.h>
 
 #include "IrigBEncoder.h"
 
@@ -6,12 +7,12 @@ int main(int argc, char **argv) {
   using namespace std;
 
   IrigBTime time;
-  time.seconds = 10;
-  time.minutes = 20;
-  time.hours = 13;
-  time.days = 300;
-  time.years = 40;
-  time.seconds_tod = 1000;
+  time.seconds = 42;
+  time.minutes = 18;
+  time.hours = 21;
+  time.days = 173;
+  time.years = 3;
+  time.seconds_tod = 0b10010101110110010;
 
   IrigBFrame frame = Encode(time);
 

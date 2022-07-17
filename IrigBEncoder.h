@@ -4,11 +4,11 @@
 #include <vector>
 
 enum class IrigBSymbols {
-  kZero = 0,
-  kOne = 1,
-  kReferenceMark = -1,
-  kPositionMark = -2,
-  kIndexMark = -3,
+  kZero = 0,			/* 2 ms */
+  kOne = 1,			/* 5 ms */
+  kReferenceMark = -1,		/* 8 ms */
+  kPositionMark = -2,		/* 8 ms */
+  kIndexMark = -3,		/* 2 ms (same as zero) */
   kInvalid = -9999
 };
 

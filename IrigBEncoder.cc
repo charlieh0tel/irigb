@@ -2,6 +2,13 @@
 
 #include <absl/base/macros.h>
 
+//
+// Reference:
+// FM-31 IRIG STANDARD 200-16 IRIG SERIAL TIME CODE FORMATS
+// http://www.irig106.org/docs/rcc/200-16_IRIG_Serial_Time_Code_Formats.pdf
+//
+
+
 namespace {
 void PushBit(IrigBFrame& frame, bool bit) { frame.push_back(IrigBSymbols(bit)); }
 
@@ -74,7 +81,7 @@ void PushBCD8(IrigBFrame& frame, int value) {
   PushBit(frame, (tens >> 3) & 1);
 }
 
-// 16-bits binary for TOD seconds
+// 16-bits binary for ToD seconds.
 void PushBinary16(IrigBFrame& frame, int value) {
   ABSL_ASSERT(value >= 0 && value <= 0x1fffff);
   for (int i = 0; i <= 8; ++i) {
@@ -92,7 +99,7 @@ IrigBFrame Encode(const IrigBTime& time) {
 
   frame.reserve(kIrigBFrameSize);
 
-  // FM-31 Figure 6-2
+  // Base on Figure 5-2, Table 5-4, and Table 5-5.
   //
   // + 000 ms - Reference mark
   ABSL_ASSERT(frame.size() == 0);
